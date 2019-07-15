@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>test</title>
+    </head>
+    <body>
+        <button id="debounce">debounce</button>
+        <button id="throttle">throttle</button>
+        <script>
+            function debounce(fn, delay) {
+                var timer = null;
+                return function() {
+                    var that = this;
+                    clearTimeout(timer);
+                    timer = setTimeout(function() {
+                        fn.apply(that, arguments);
+                    }, delay);
+                }
+            }
+
+            function helloDebounce() {
+                console.log('hello debounce');
+            }
+            var debounceBtn = document.getElementById('debounce');
+            debounceBtn.addEventListener('click', debounce(helloDebounce, 2000));
+
+            /**********************************/
+
+            function throttle(fn, delay) {
+                var is = false;
+                return function() {
+                    var that = this;
+                    if (!is) {
+                        is = true;
+                        fn.apply(that, arguments);
+                        setTimeout(function() {
+                            is = false
+                        }, delay)
+                    }
+                }
+            }
+
+            var throttleBtn = document.getElementById('throttle');
+            throttleBtn.addEventListener('click', throttle(helloDebounce, 2000));
+        </script>
+    </body>
+</html>

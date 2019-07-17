@@ -15,6 +15,7 @@ function bubbleSorting(arr) {
 }
 
 /* 插入排序 */
+/* 后面的无须元素依次和前面的有序元素比较，开始时第一个元素默认有序 */
 function insertSorting(arr) {
     var temp;
     for (var i = 1; i < arr.length; i ++) {
@@ -29,6 +30,7 @@ function insertSorting(arr) {
 }
 
 /* 选择排序 */
+/* 遍历数组，找到后面最小的元素，和前面的元素替换位置 */
 function selectSorting(arr) {
     for (var i = 0; i < arr.length; i ++) {
         var index;

@@ -49,4 +49,3 @@ function selectSorting(arr) {
     return arr
 }
 
-console.log(selectSorting(arr))

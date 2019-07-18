@@ -14,7 +14,9 @@
             "severity": "warning",
             "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
         },
-        "quotemark": [true, "single", "jsx-double"]
+        "quotemark": [true, "single", "jsx-double"],
+        "ordered-imports": false,
+        "no-shadowed-variable": false
     },
     "jsRules": {
         "max-line-length": {

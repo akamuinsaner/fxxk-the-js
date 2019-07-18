@@ -16,7 +16,7 @@ const postcssOpts = {
 };
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
 
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -25,7 +25,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.ts', 'jsx'],
+        extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
         alias: {
             components: path.resolve(__dirname, 'src/components'),
             routes: path.resolve(__dirname, 'src/routes'),
@@ -65,7 +65,8 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
         ]
     },
 

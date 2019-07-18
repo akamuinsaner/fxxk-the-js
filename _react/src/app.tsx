@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Routes from './route';
 
 interface IComponentProps {
     compiler: string;
@@ -9,7 +10,10 @@ const App = ({
     library,
 }: IComponentProps) => {
     return (
-        <div>welcome to {library} {compiler} world</div>
+        <div>
+            <div>welcome to {library} {compiler} world</div>
+            <Routes />
+        </div>
     );
 };
 

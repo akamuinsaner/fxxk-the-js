@@ -1,6 +1,6 @@
 {
     "extends": "tslint:recommended",
-    "rulesDirectory": ["src/"],
+    "rulesDirectory": ["src/", "server/"],
     "rules": {
         "max-line-length": {
             "options": [120]

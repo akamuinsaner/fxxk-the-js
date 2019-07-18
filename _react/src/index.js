@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import App from './app';
+import './index.less';
+console.log('0011')
 ReactDOM.render(
-    <div>welcome to react world</div>,
+    <App />,
     document.getElementById('root')
 )

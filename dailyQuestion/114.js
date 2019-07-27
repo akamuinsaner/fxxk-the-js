@@ -4,7 +4,7 @@
  * 'abbkejsbcccwqaa' => {'c':3}
  */
 
-function question104(str) {
+function question114(str) {
     let obj = {};
     let last = '';
     for (let i = 0; i < str.length; i ++) {
@@ -30,5 +30,7 @@ function question104(str) {
     }
     return result
 }
+
+
 
 console.log(question104('abcaakjbb'))

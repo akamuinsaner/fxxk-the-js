@@ -23,6 +23,8 @@ function BST() {
     this.findMax = findMax;
     this.find = find;
     this.reverse = reverse;
+    this.countNode = countNode;
+    this.countSide = countSide;
 }
 
 function insert(data) {
@@ -139,6 +141,51 @@ function reverse(current) {
     }
 }
 
+function countNode() {
+    let count = 0
+    function _count(current) {
+        if (current != null) {
+            count += 1;
+            _count(current.left)
+            _count(current.right);
+        }
+    }
+    _count(this.root);
+    return count;
+}
+
+function countSide() {
+    let count = 0;
+    function _count(current) {
+        if (current != null) {
+            if (current.left) {
+                count += 1;
+                _count(current.left);
+            }
+            if (current.right) {
+                count += 1;
+                _count(current.right);
+            }
+        }
+    }
+    _count(this.root);
+    return count;
+}
+
+function handleText() {
+    var bst = new BST();
+    var fs = require('fs');
+    const bfData = fs.readFileSync('./tree_test.txt');
+    const data = bfData.toString('utf-8');
+    const a = data.split(',');
+    for (let item of a) {
+        bst.insert(item);
+    }
+    return bst;
+}
+
+
+
 var nums = new BST();
 nums.insert(23);
 nums.insert(45);
@@ -147,3 +194,4 @@ nums.insert(37);
 nums.insert(3);
 nums.insert(99);
 nums.insert(22);
+console.log(handleText());

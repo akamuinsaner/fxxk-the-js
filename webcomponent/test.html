@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en-US">
+    <meta charset="utf-8">
+    <title>web component</title>
+</head>
+
+<body style="padding: 40px;">
+    <popup-info img="img/alt.png" text="Your card validation code (CVC)
+            is an extra security feature — it is the last 3 or 4 numbers on the
+            back of your card."></popup-info>
+    <div>
+        <button class="add">Add custom-square to DOM</button>
+        <button class="update">Update attributes</button>
+        <button class="remove">Remove custom-square from DOM</button>
+    </div>
+
+    <div style="border-bottom: 1px solid grey; margin: 20px 0px;"></div>
+    <template id="my-paragraph">
+        <style>
+            p {
+                color: white;
+                background-color: #666;
+                padding: 5px;
+            }
+        </style>
+        <p><slot name="my-text">My default text</slot></p>
+    </template>
+    <my-paragraph></my-paragraph>
+    <my-paragraph>
+        <span slot="my-text">Let's have some different text!</span>
+    </my-paragraph>
+    <script src="./autonomousCustomElements.js"></script>
+    <script src="./customizedBuiltInElements.js"></script>
+    <script src="./templateAndSlot.js"></script>
+</body>
+
+</html>

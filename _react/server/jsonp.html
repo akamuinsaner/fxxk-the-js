@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button id="cors">cors</button>
+        <br />
+        <script>
+            // function handleResponse(res) {
+            //     console.log(res);
+            // }
+            const btn = document.getElementById('cors');
+            btn.onclick = function() {
+                fetch(
+                    'http://localhost:3000/cors',
+                ).then(res => {
+                    res.blob().then(blob => {
+                        const filename = 'test.json'
+                        const a = document.createElement('a');
+                        const url = window.URL.createObjectURL(blob);
+                        a.href = url;
+                        a.download = filename;
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(a);
+                    })
+                })
+            }
+        </script>
+        <!-- <script src="http://localhost:3000/jsonp?callback=handleResponse"></script> -->
+    </body>
+</html>

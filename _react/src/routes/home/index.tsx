@@ -14,14 +14,33 @@ const Home = ({
     addCount,
     clearCount,
     subCount,
-}: IComponentProps) => (
-    <div>
-        <button onClick={addCount}>add</button>
-        <button onClick={subCount}>sub</button>
-        <button onClick={clearCount}>clear</button>
-        <div>{home.count}</div>
-    </div>
-);
+}: IComponentProps) => {
+    const cors = () => {
+        fetch(
+            'http://localhost:3000/cors',
+        ).then((res) => {
+            res.blob().then((blob) => {
+                const filename = 'test.json';
+                const a = document.createElement('a');
+                const url = window.URL.createObjectURL(blob);
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            });
+        });
+    };
+    return (
+        <div>
+            <button onClick={cors}>add</button>
+            <button onClick={subCount}>sub</button>
+            <button onClick={clearCount}>clear</button>
+            <div>{home.count}</div>
+        </div>
+    )
+};
 
 export default connect((state: any) => ({
     home: state.home,

@@ -1,3 +1,5 @@
+@import "../fontawesome/css/all.css";
+
 .divider {
     margin: 10px 0px;
     height: 0px;
@@ -348,7 +350,6 @@
 }
 
 .star-container {
-    height: 200px;
     width: 500px;
 }
 .star-slogon {
@@ -377,5 +378,46 @@
         transform: rotateY(0deg);
         opacity: 0;
     }
+}
+.clicked-icon {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    background: rgb(68, 72, 87);
+}
+.clicked-icon button {
+    height: 100px;
+    width: 100px;
+    padding: 0px;
+    font-size: 60px;
+    border: none;
+    outline: none;
+    background-color: #FFF;
+    background-size: 100px 100px;
+    background-position: -100px -100px;
+    color: #40a9ff;
+    cursor: pointer;
+    border-radius: 32px;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow:-5px 5px 15px -5px #f1f1f1;
+}
+.clicked-icon button:before {
+    content: '';
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    transition: transform 0.3s cubic-bezier(0.28, -0.45, 0.27, 2.25);
+    transform: rotateZ(45deg) translateX(-34px) translateY(120px);
+    background-color: #40a9ff;
+}
+.clicked-icon button:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
+.clicked-icon button:hover:before {
+    transform: rotateZ(45deg) translateX(-34px) translateY(0px);
 }
 

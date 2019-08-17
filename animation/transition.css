@@ -412,6 +412,7 @@
     transition: transform 0.3s cubic-bezier(0.28, -0.45, 0.27, 2.25);
     transform: rotateZ(45deg) translateX(-34px) translateY(120px);
     background-color: #40a9ff;
+    z-index: -1;
 }
 .clicked-icon button:hover {
     transform: scale(1.2);

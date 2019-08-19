@@ -18,6 +18,18 @@ app.get('/cors', (req, res) => {
     res.download('./server/test.json');
 });
 
+app.get('/staticstr', (req, res) => {
+    const staticStr = `
+        <!DOCTYPE html>
+        <html>
+            <body>
+                1111111
+            </body>
+        </html>
+    `
+    res.send(staticStr)
+})
+
 app.listen(3000, () => {
     console.log('Example app listening on port 3000!');
 });
